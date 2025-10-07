@@ -32,8 +32,9 @@ La base de datos sirve a una verduleria pequeña:
 - Productos: frutas y verduras.
 - Clientes: particulares que compran en la verduleria.
 - Empleados: quienes registran las ventas.
-- Ventas: registro de cada venta, con cliente, empleado, total y detalle de productos (JSON).
-- Detalle de producto: Para esta entrega, se optó por registrar el detalle de los productos directamente en formato JSON dentro de la tabla ventas. Esto simplifica el funcionamiento del sistema y evita la complejidad de manejar una tabla adicional para el detalle de venta, manteniendo la informacion suficiente para controlar los productos vendidos y sus cantidades.
+- Ventas: registro de cada venta, con cliente, empleado, total y detalle de productos.
+- Detalle de producto: Para esta entrega, se optó por registrar el detalle de los productos directamente como texto dentro de la tabla ventas. Esto simplifica el funcionamiento del sistema y evita la complejidad de manejar una tabla adicional para el detalle de venta, manteniendo la informacion suficiente para controlar los productos vendidos y sus cantidades.
+En futuras entregas, se implementará una tabla intermedia de detalle de ventas, donde se registrarán los productos, cantidades y precios de cada operación de manera estructurada.
 
  Diagrama
  
@@ -96,6 +97,7 @@ Prueba funcionamiento
 En el siguiente script se agrega un cliente y un empleado, luego se crea un pedido usando esos registros y finalmente se consultan los pedidos para verificar que se hayan registrado correctamente.
 
 [Pruebas](Desktop/Docs/Prueba-Funcionamiento.sql)
+
 
 
 
