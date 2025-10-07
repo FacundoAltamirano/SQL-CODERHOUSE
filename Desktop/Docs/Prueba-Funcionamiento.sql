@@ -1,10 +1,17 @@
-CTRL + F Para buscar una palabra 
-F3 Para saltar a la siguiente coincidencia
-Shift + Alt +  ↓ Para duplicar linea
-CRTL + L Para seleccionar una linea entera
-Alt + ↑ / Alt + ↓ Mover hacia arriba o abajo
-CTRL + SHIFT + E Para abrir el Explorer
-CTRL + B Para cerrar 
-CTRL + W Para cerrar un archivo 
-CTRL + TAB Para moverse entre archivos 
-CTRL + SHIFT + TAB Para volverse al archivo
+INSERT INTO empleados (nombre, apellido, puesto, fecha_ingreso)
+VALUES ('Ana', 'Lopez', 'Cajera', '2025-10-06');
+
+INSERT INTO clientes (nombre, apellido, telefono, direccion, email)
+VALUES ('Carlos', 'Gomez', '3515559999', 'Calle Verde 456', 'carlos@example.com');
+
+INSERT INTO ventas (cliente_id, empleado_id, total, metodo_pago, detalle)
+VALUES (
+    (SELECT id_cliente FROM clientes ORDER BY id_cliente DESC LIMIT 1),
+    (SELECT id_empleado FROM empleados ORDER BY id_empleado DESC LIMIT 1),
+    200.00,
+    'EFECTIVO',
+    'Tomate x2 - 80.00, Lechuga x1 - 40.00'
+);
+
+
+SELECT * FROM ventas;
