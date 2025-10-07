@@ -1,12 +1,16 @@
-==========================================================
+
   Primera entrega - SQL CODERHOUSE
   Alumno: Facundo Gastón Altamirano
   Fecha de entrega: 07/10/2025
   Base de datos: Verdulería
-==========================================================
-==========================================================
-  s
-==========================================================
+
+
+  En este proyecto se aplicaron prácticas aprendidas durante el curso,
+  complementadas con material de apoyo como el curso 
+  "Curso COMPLETO de SQL y BASES DE DATOS Desde Cero para PRINCIPIANTES"
+  de Mouredev (YouTube), así como contenido adicional sobre
+  motores de almacenamiento y el uso de DrawSQL para la creación de diagramas y aplicaccion de buenas practicas.
+  Ademas, se practico documentacion en Markdraw, aplicando buenas tecnicas en la presentacion del proyecto.
 
 Sistema de ventas
 
@@ -87,6 +91,7 @@ Ventas
 
 
 [Script SQL](Desktop/Docs/Create-Verduleria.sql)
+
 
 
 
