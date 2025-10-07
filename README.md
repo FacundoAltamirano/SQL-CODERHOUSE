@@ -22,7 +22,8 @@ La base de datos sirve a una verduleria pequeña:
 - Detalle de producto: Para esta entrega, se optó por registrar el detalle de los productos directamente en formato JSON dentro de la tabla ventas. Esto simplifica el funcionamiento del sistema y evita la complejidad de manejar una tabla adicional para el detalle de venta, manteniendo la informacion suficiente para controlar los productos vendidos y sus cantidades.
 
  Diagrama E-R
-![Diagrama](ruta/a/tu/diagrama.png)
+![Diagrama](Desktop/Docs/Diagrama%20DrawSQL.png)
+
 
  Listado de Tablas
 
@@ -74,5 +75,7 @@ Ventas
 | observaciones | TEXT                                              |                             |
 
 Script SQL
-Puedes descargar el archivo [create_verduleria_simple.sql](ruta/a/tu/create_verduleria_simple.sql)
+
+[Script SQL](Desktop/Docs/Create-Verduleria.sql)
+
 
