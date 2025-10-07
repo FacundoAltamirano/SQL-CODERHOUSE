@@ -75,9 +75,9 @@ Ventas
 | detalle       | JSON                                              |                             |
 | observaciones | TEXT                                              |                             |
 
-Script SQL
 
 [Script SQL](Desktop/Docs/Create-Verduleria.sql)
+
 
 
 
