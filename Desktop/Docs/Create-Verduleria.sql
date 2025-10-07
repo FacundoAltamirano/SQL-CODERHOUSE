@@ -48,7 +48,7 @@ CREATE TABLE ventas (
 
 INSERT INTO productos (codigo, nombre, precio, stock, categoria)
 VALUES 
-('P001','Tomate',80.00,20.500,'Verdura'),
+('P001','Tomate',90.00,20.500,'Verdura'),
 ('P002','Papa',50.00,30.000,'Verdura'),
 ('P003','Lechuga',40.00,15.000,'Verdura'),
 ('P004','Manzana',120.00,10.000,'Fruta');
