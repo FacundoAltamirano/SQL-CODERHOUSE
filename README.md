@@ -92,6 +92,8 @@ Ventas
 
 [Script SQL](Desktop/Docs/Create-Verduleria.sql)
 
+Prueba funcionamiento
+En el siguiente script se agrega un cliente y un empleado, luego se crea un pedido usando esos registros y finalmente se consultan los pedidos para verificar que se hayan registrado correctamente.
 
 
 
