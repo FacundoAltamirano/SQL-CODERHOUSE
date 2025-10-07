@@ -40,27 +40,34 @@ CREATE TABLE ventas (
     empleado_id INT,
     total DECIMAL(12,2) NOT NULL,
     metodo_pago ENUM('EFECTIVO','TARJETA','TRANSFERENCIA','OTRO') DEFAULT 'EFECTIVO',
-    detalle JSON,
+    detalle TEXT,
     observaciones TEXT,
     CONSTRAINT fk_venta_cliente FOREIGN KEY (cliente_id) REFERENCES clientes(id_cliente),
     CONSTRAINT fk_venta_empleado FOREIGN KEY (empleado_id) REFERENCES empleados(id_empleado)
 ) ENGINE=InnoDB;
 
-INSERT INTO productos (codigo,nombre,precio,stock,categoria)
+INSERT INTO productos (codigo, nombre, precio, stock, categoria)
 VALUES 
-('P001','Tomate',80.00,20.500,'Verdura'),
+('P001','Tomate',90.00,20.500,'Verdura'),
 ('P002','Papa',50.00,30.000,'Verdura'),
 ('P003','Lechuga',40.00,15.000,'Verdura'),
 ('P004','Manzana',120.00,10.000,'Fruta');
 
-INSERT INTO clientes (nombre,apellido,telefono,direccion,email)
+INSERT INTO clientes (nombre, apellido, telefono, direccion, email)
 VALUES 
 ('Maria','Gomez','3515551234','Calle Falsa 123','maria@example.com');
 
-INSERT INTO empleados (nombre,apellido,puesto,fecha_ingreso)
+INSERT INTO empleados (nombre, apellido, puesto, fecha_ingreso)
 VALUES 
 ('Juan','Perez','Cajero','2024-01-10');
 
-INSERT INTO ventas (cliente_id,empleado_id,total,metodo_pago,detalle)
+INSERT INTO ventas (cliente_id, empleado_id, total, metodo_pago, detalle, observaciones)
 VALUES
-(1,
+(
+    1,
+    1,
+    250.00,
+    'EFECTIVO',
+    'Tomate x2 - 80.00; Papa x3 - 50.00',
+    'Venta realizada sin problemas'
+);

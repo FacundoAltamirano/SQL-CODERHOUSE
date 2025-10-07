@@ -1,3 +1,17 @@
+
+  Primera entrega - SQL CODERHOUSE
+  Alumno: Facundo Gastón Altamirano
+  Fecha de entrega: 07/10/2025
+  Base de datos: Verdulería
+
+
+  En este proyecto se aplicaron prácticas aprendidas durante el curso,
+  complementadas con material de apoyo como el curso 
+  "Curso COMPLETO de SQL y BASES DE DATOS Desde Cero para PRINCIPIANTES"
+  de Mouredev (YouTube), así como contenido adicional sobre
+  motores de almacenamiento y el uso de DrawSQL para la creación de diagramas y aplicaccion de buenas practicas.
+  Ademas, se practico documentacion en Markdraw, aplicando buenas tecnicas en la presentacion del proyecto.
+
 Sistema de ventas
 
 Introduccion
@@ -21,8 +35,10 @@ La base de datos sirve a una verduleria pequeña:
 - Ventas: registro de cada venta, con cliente, empleado, total y detalle de productos (JSON).
 - Detalle de producto: Para esta entrega, se optó por registrar el detalle de los productos directamente en formato JSON dentro de la tabla ventas. Esto simplifica el funcionamiento del sistema y evita la complejidad de manejar una tabla adicional para el detalle de venta, manteniendo la informacion suficiente para controlar los productos vendidos y sus cantidades.
 
- Diagrama E-R
-![Diagrama](ruta/a/tu/diagrama.png)
+ Diagrama
+ 
+![Diagrama](Desktop/Docs/Diagrama%20DrawSQL.png)
+
 
  Listado de Tablas
 
@@ -73,6 +89,11 @@ Ventas
 | detalle       | JSON                                              |                             |
 | observaciones | TEXT                                              |                             |
 
-Script SQL
-Puedes descargar el archivo [create_verduleria_simple.sql](ruta/a/tu/create_verduleria_simple.sql)
+
+[Script SQL](Desktop/Docs/Create-Verduleria.sql)
+
+
+
+
+
 
