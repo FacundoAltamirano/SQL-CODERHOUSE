@@ -1,3 +1,13 @@
+==========================================================
+  Primera entrega - SQL CODERHOUSE
+  Alumno: Facundo Gastón Altamirano
+  Fecha de entrega: 07/10/2025
+  Base de datos: Verdulería
+==========================================================
+==========================================================
+  s
+==========================================================
+
 Sistema de ventas
 
 Introduccion
@@ -77,6 +87,7 @@ Ventas
 
 
 [Script SQL](Desktop/Docs/Create-Verduleria.sql)
+
 
 
 
