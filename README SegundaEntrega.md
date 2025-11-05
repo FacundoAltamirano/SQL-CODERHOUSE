@@ -24,86 +24,111 @@ Diagrama actualizado
 
 Listado de Tablas
 Productos
-| Campo | Tipo | Clave |
+| Campo       | Tipo               | Clave  |
 | ----------- | ------------------ | ------ |
-| id_producto | INT AUTO_INCREMENT | PK |
-| codigo | VARCHAR(30) | UNIQUE |
-| nombre | VARCHAR(100) | |
-| precio | DECIMAL(10,2) | |
-| stock | DECIMAL(10,3) | |
-| categoria | VARCHAR(50) | |
-| activo | TINYINT(1) | |
-| created_at | TIMESTAMP | |
-| updated_at | TIMESTAMP | |
+| id_producto | INT AUTO_INCREMENT | PK     |
+| codigo      | VARCHAR(30)        | UNIQUE |
+| nombre      | VARCHAR(100)       |        |
+| precio      | DECIMAL(10,2)      |        |
+| stock       | DECIMAL(10,3)      |        |
+| categoria   | VARCHAR(50)        |        |
+| activo      | TINYINT(1)         |        |
+| created_at  | TIMESTAMP          |        |
+| updated_at  | TIMESTAMP          |        |
+
 
 Detalle_Producto
-| Campo | Tipo | Clave |
-| -------------- | ------------------ | --------------------------- |
-| id_detalle | INT AUTO_INCREMENT | PK |
-| id_producto | INT | FK → productos(id_producto) |
-| origen | VARCHAR(100) | |
-| proveedor | VARCHAR(100) | |
-| unidad_medida | VARCHAR(30) | |
-| descripcion | TEXT | |
-| fecha_registro | TIMESTAMP | |
+| Campo                                                                                                                              | Tipo               | Clave                        |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ---------------------------- |
+| id_detalle                                                                                                                         | INT AUTO_INCREMENT | PK                           |
+| id_producto                                                                                                                        | INT                | FK -> productos(id_producto) |
+| origen                                                                                                                             | VARCHAR(100)       |                              |
+| proveedor                                                                                                                          | VARCHAR(100)       |                              |
+| unidad_medida                                                                                                                      | VARCHAR(30)        |                              |
+| descripcion                                                                                                                        | TEXT               |                              |
+| fecha_registro                                                                                                                     | TIMESTAMP          |                              |
 Descripcion:
-La tabla detalle_producto almacena informacion complementaria sobre los productos, como su origen, proveedor y unidad de medida.
-Esta vinculada directamente a productos mediante una relacion 1:1.
+| La tabla `detalle_producto` almacena informacion complementaria sobre los productos, como su origen, proveedor y unidad de medida. |                    |                              |
+| Esta vinculada directamente a `productos` mediante una relacion 1:1.                                                               |                    |                              |
+
+
 
 Cliente
-| Campo | Tipo | Clave |
+| Campo      | Tipo               | Clave |
 | ---------- | ------------------ | ----- |
-| id_cliente | INT AUTO_INCREMENT | PK |
-| nombre | VARCHAR(100) | |
-| apellido | VARCHAR(100) | |
-| telefono | VARCHAR(30) | |
-| direccion | VARCHAR(200) | |
-| email | VARCHAR(100) | |
-| created_at | TIMESTAMP | |
+| id_cliente | INT AUTO_INCREMENT | PK    |
+| nombre     | VARCHAR(100)       |       |
+| apellido   | VARCHAR(100)       |       |
+| telefono   | VARCHAR(30)        |       |
+| direccion  | VARCHAR(200)       |       |
+| email      | VARCHAR(100)       |       |
+| created_at | TIMESTAMP          |       |
+
 
 Empleados
-| Campo | Tipo | Clave |
+| Campo         | Tipo               | Clave |
 | ------------- | ------------------ | ----- |
-| id_empleado | INT AUTO_INCREMENT | PK |
-| nombre | VARCHAR(100) | |
-| apellido | VARCHAR(100) | |
-| puesto | VARCHAR(50) | |
-| fecha_ingreso | DATE | |
-| activo | TINYINT(1) | |
-| created_at | TIMESTAMP | |
+| id_empleado   | INT AUTO_INCREMENT | PK    |
+| nombre        | VARCHAR(100)       |       |
+| apellido      | VARCHAR(100)       |       |
+| puesto        | VARCHAR(50)        |       |
+| fecha_ingreso | DATE               |       |
+| activo        | TINYINT(1)         |       |
+| created_at    | TIMESTAMP          |       |
+
 
 Ventas
-| Campo | Tipo | Clave |
-| ------------- | ------------------------------------------------- | --------------------------- |
-| id_venta | INT AUTO_INCREMENT | PK |
-| fecha | DATETIME | |
-| cliente_id | INT | FK → clientes(id_cliente) |
-| empleado_id | INT | FK → empleados(id_empleado) |
-| total | DECIMAL(12,2) | |
-| metodo_pago | ENUM('EFECTIVO','TARJETA','TRANSFERENCIA','OTRO') | |
-| detalle | JSON | |
-| observaciones | TEXT | |
+| Campo         | Tipo                                              | Clave                        |
+| ------------- | ------------------------------------------------- | ---------------------------- |
+| id_venta      | INT AUTO_INCREMENT                                | PK                           |
+| fecha         | DATETIME                                          |                              |
+| cliente_id    | INT                                               | FK -> clientes(id_cliente)   |
+| empleado_id   | INT                                               | FK -> empleados(id_empleado) |
+| total         | DECIMAL(12,2)                                     |                              |
+| metodo_pago   | ENUM('EFECTIVO','TARJETA','TRANSFERENCIA','OTRO') |                              |
+| detalle       | JSON                                              |                              |
+| observaciones | TEXT                                              |                              |
+
 
 Vistas
-| Vista | Tablas involucradas | Objetivo |
-| -------------------------- | ----------------------------------- | ----------------------------------------------------- |
-| vista_ventas_cliente | ventas, clientes | Mostrar total de ventas por cada cliente. |
-| vista_productos_bajo_stock | productos | Listar productos cuyo stock sea menor a 10. |
-| vista_detalle_ventas | ventas, productos, detalle_producto | Consultar ventas con detalle de producto y proveedor. |
+| Vista                      | Tablas involucradas                 | Objetivo                                             |
+| -------------------------- | ----------------------------------- | ---------------------------------------------------- |
+| vista_ventas_cliente       | ventas, clientes                    | Mostrar total de ventas por cada cliente             |
+| vista_productos_bajo_stock | productos                           | Listar productos cuyo stock sea menor a 10           |
+| vista_detalle_ventas       | ventas, productos, detalle_producto | Consultar ventas con detalle de producto y proveedor |
+
 
 Funciones
-| Funcion | Tablas involucradas | Objetivo |
-| ----------------------------------- | ------------------- | ------------------------------------------------------ |
-| fn_total_ventas_cliente(cliente_id) | ventas | Devuelve el total de ventas realizadas por un cliente. |
-| fn_stock_producto(producto_id) | productos | Devuelve el stock actual de un producto. |
+| Funcion                             | Tablas involucradas | Objetivo                                              |
+| ----------------------------------- | ------------------- | ----------------------------------------------------- |
+| fn_total_ventas_cliente(cliente_id) | ventas              | Devuelve el total de ventas realizadas por un cliente |
+| fn_stock_producto(producto_id)      | productos           | Devuelve el stock actual de un producto               |
+
 
 Triggers
-| Trigger | Tabla afectada | Objetivo |
-| ------------------- | -------------- | --------------------------------------------------------------------------- |
-| trg_actualiza_stock | ventas | Reduce automaticamente el stock de los productos segun la venta registrada. |
+| Trigger             | Tabla afectada | Objetivo                                                                   |
+| ------------------- | -------------- | -------------------------------------------------------------------------- |
+| trg_actualiza_stock | ventas         | Reduce automaticamente el stock de los productos segun la venta registrada |
+
+
+Stored Precedure
+| Stored Procedure          | Tablas involucradas | Objetivo                                                                        |
+| ------------------------- | ------------------- | ------------------------------------------------------------------------------- |
+| sp_registrar_venta        | ventas, productos   | Registrar una venta con detalle de productos y actualizar stock automáticamente |
+| sp_reporte_ventas_cliente | ventas, clientes    | Generar un reporte de ventas de un cliente en un rango de fechas                |
+
+Paso a paso de ejecucion de scripts
+
+1.Abrir el cliente MySQL.
+2.Ejecutar Create-Verduleria-v2.sql para crear la base de datos y tablas.
+3.Ejecutar Create-Objetos.sql para crear triggers, vistas, funciones y stored procedures.
+4.Ejecutar Insertar-Verduleria.sql para insertar datos iniciales en las tablas.
+5.Ejecutar Prueba-Funcionamiento-v2.sql para verificar que todo funciona correctamente y probar triggers, vistas y funciones.
+
 
 Archivos de referencia
 
 [Create-Verduleria-v2.sql](Docs/SegundaEntrega/Create-Verduleria-v2.sql)  
-[Insert-Verduleria.sql](Docs/SegundaEntrega/Insert-Verduleria.sql)  
+[Insertar-Verduleria.sql](Docs/SegundaEntrega/Insertar-Verduleria.sql)  
 [Prueba-Funcionamiento-v2.sql](Docs/SegundaEntrega/Prueba-Funcionamiento-v2.sql)
+[Create-Objetos.sql](Docs/SegundaEntrega/Create-Objetos.sql)
