@@ -120,18 +120,13 @@ Paso a paso de ejecucion de scripts
 
 1.Abrir el cliente MySQL.
 
-2.Ejecutar Create-Verduleria-v2.sql para crear la base de datos y tablas.
+2.Ejecutar [Create-Verduleria-v2.sql](Desktop/Docs%20SegundaEntrega/Create-Verduleria-v2.sql)   para crear la base de datos y tablas. ( Teniendo como base la [Primera creación de la entrega uno](Desktop/Docs%20PrimeraEntrega/Create-Verduleria.sql) )
 
-3.Ejecutar Create-Objetos.sql para crear triggers, vistas, funciones y stored procedures.
+3.Ejecutar [Create-Objetos.sql](Desktop/Docs%20SegundaEntrega/Create-Objetos.sql) para crear triggers, vistas, funciones y stored procedures.
 
-4.Ejecutar Insertar-Verduleria.sql para insertar datos iniciales en las tablas.
+4.Ejecutar [Insertar-Verduleria.sql](Desktop/Docs%20SegundaEntrega/Insertar-Verduleria.sql)   para insertar datos iniciales en las tablas.
 
-5.Ejecutar Prueba-Funcionamiento-v2.sql para verificar que todo funciona correctamente y probar triggers, vistas y funciones.
+5.Ejecutar [Prueba-Funcionamiento-v2.sql](Desktop/Docs%20SegundaEntrega/Prueba-Funcionamiento-v2.sql) para verificar que todo funciona correctamente y probar triggers, vistas y funciones.
 
+ 
 
-Archivos de referencia
-
-[Create-Verduleria-v2.sql](Desktop/Docs%20SegundaEntrega/Create-Verduleria-v2.sql)  
-[Insertar-Verduleria.sql](Desktop/Docs%20SegundaEntrega/Insertar-Verduleria.sql)  
-[Prueba-Funcionamiento-v2.sql](Desktop/Docs%20SegundaEntrega/Prueba-Funcionamiento-v2.sql)
-[Create-Objetos.sql](Desktop/Docs%20SegundaEntrega/Create-Objetos.sql)
