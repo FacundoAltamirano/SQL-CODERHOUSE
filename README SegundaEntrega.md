@@ -20,7 +20,7 @@ Se añadieron vistas para consultar información consolidada (por ejemplo, venta
 Se implementaron funciones y procedimientos almacenados (Stored Procedures) para automatizar tareas comunes y mejorar la consistencia de los datos.
 
 Diagrama actualizado
-[Diagrama actualizado](Docs/SegundaEntrega/Diagrama-SegundaEntrega.png)
+[Diagrama actualizado](Docs%20PrimeraEntrega/Diagrama-SegundaEntrega.png)
 
 Listado de Tablas
 Productos
