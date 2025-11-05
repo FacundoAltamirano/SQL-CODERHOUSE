@@ -1,0 +1,109 @@
+Segunda entrega - SQL CODERHOUSE
+Alumno: Facundo Gastón Altamirano
+Fecha de entrega: 05/11/2025
+Base de datos: Verduleria
+
+Objetivo
+
+En esta segunda entrega se amplia el proyecto anterior incorporando una nueva tabla llamada detalle_producto, que permite almacenar información complementaria de cada producto, como su proveedor, origen y unidad de medida.
+Ademas, se implementan triggers para control de stock automatico y se definen vistas y funciones que facilitan consultas de gestión y reportes.
+
+Sistema de ventas
+
+El sistema continua orientado a la gestión de una verduleria minorista, con el objetivo de mantener un registro organizado y seguro de todos los movimientos, clientes, empleados y ventas.
+
+Nuevas mejoras implementadas
+
+Se añadio la tabla detalle_producto, relacionada 1:1 con la tabla productos.
+Se crearon triggers para actualizar el stock automáticamente después de cada venta.
+Se añadieron vistas para consultar información consolidada (por ejemplo, ventas totales por cliente y productos con bajo stock).
+Se implementaron funciones y procedimientos almacenados (Stored Procedures) para automatizar tareas comunes y mejorar la consistencia de los datos.
+
+Diagrama actualizado
+[Diagrama actualizado](Docs/SegundaEntrega/Diagrama-SegundaEntrega.png)
+
+Listado de Tablas
+Productos
+| Campo | Tipo | Clave |
+| ----------- | ------------------ | ------ |
+| id_producto | INT AUTO_INCREMENT | PK |
+| codigo | VARCHAR(30) | UNIQUE |
+| nombre | VARCHAR(100) | |
+| precio | DECIMAL(10,2) | |
+| stock | DECIMAL(10,3) | |
+| categoria | VARCHAR(50) | |
+| activo | TINYINT(1) | |
+| created_at | TIMESTAMP | |
+| updated_at | TIMESTAMP | |
+
+Detalle_Producto
+| Campo | Tipo | Clave |
+| -------------- | ------------------ | --------------------------- |
+| id_detalle | INT AUTO_INCREMENT | PK |
+| id_producto | INT | FK → productos(id_producto) |
+| origen | VARCHAR(100) | |
+| proveedor | VARCHAR(100) | |
+| unidad_medida | VARCHAR(30) | |
+| descripcion | TEXT | |
+| fecha_registro | TIMESTAMP | |
+Descripcion:
+La tabla detalle_producto almacena informacion complementaria sobre los productos, como su origen, proveedor y unidad de medida.
+Esta vinculada directamente a productos mediante una relacion 1:1.
+
+Cliente
+| Campo | Tipo | Clave |
+| ---------- | ------------------ | ----- |
+| id_cliente | INT AUTO_INCREMENT | PK |
+| nombre | VARCHAR(100) | |
+| apellido | VARCHAR(100) | |
+| telefono | VARCHAR(30) | |
+| direccion | VARCHAR(200) | |
+| email | VARCHAR(100) | |
+| created_at | TIMESTAMP | |
+
+Empleados
+| Campo | Tipo | Clave |
+| ------------- | ------------------ | ----- |
+| id_empleado | INT AUTO_INCREMENT | PK |
+| nombre | VARCHAR(100) | |
+| apellido | VARCHAR(100) | |
+| puesto | VARCHAR(50) | |
+| fecha_ingreso | DATE | |
+| activo | TINYINT(1) | |
+| created_at | TIMESTAMP | |
+
+Ventas
+| Campo | Tipo | Clave |
+| ------------- | ------------------------------------------------- | --------------------------- |
+| id_venta | INT AUTO_INCREMENT | PK |
+| fecha | DATETIME | |
+| cliente_id | INT | FK → clientes(id_cliente) |
+| empleado_id | INT | FK → empleados(id_empleado) |
+| total | DECIMAL(12,2) | |
+| metodo_pago | ENUM('EFECTIVO','TARJETA','TRANSFERENCIA','OTRO') | |
+| detalle | JSON | |
+| observaciones | TEXT | |
+
+Vistas
+| Vista | Tablas involucradas | Objetivo |
+| -------------------------- | ----------------------------------- | ----------------------------------------------------- |
+| vista_ventas_cliente | ventas, clientes | Mostrar total de ventas por cada cliente. |
+| vista_productos_bajo_stock | productos | Listar productos cuyo stock sea menor a 10. |
+| vista_detalle_ventas | ventas, productos, detalle_producto | Consultar ventas con detalle de producto y proveedor. |
+
+Funciones
+| Funcion | Tablas involucradas | Objetivo |
+| ----------------------------------- | ------------------- | ------------------------------------------------------ |
+| fn_total_ventas_cliente(cliente_id) | ventas | Devuelve el total de ventas realizadas por un cliente. |
+| fn_stock_producto(producto_id) | productos | Devuelve el stock actual de un producto. |
+
+Triggers
+| Trigger | Tabla afectada | Objetivo |
+| ------------------- | -------------- | --------------------------------------------------------------------------- |
+| trg_actualiza_stock | ventas | Reduce automaticamente el stock de los productos segun la venta registrada. |
+
+Archivos de referencia
+
+[Create-Verduleria-v2.sql](Docs/SegundaEntrega/Create-Verduleria-v2.sql)  
+[Insert-Verduleria.sql](Docs/SegundaEntrega/Insert-Verduleria.sql)  
+[Prueba-Funcionamiento-v2.sql](Docs/SegundaEntrega/Prueba-Funcionamiento-v2.sql)
