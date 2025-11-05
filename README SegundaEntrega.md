@@ -19,7 +19,7 @@ Se crearon triggers para actualizar el stock automáticamente después de cada v
 Se añadieron vistas para consultar información consolidada (por ejemplo, ventas totales por cliente y productos con bajo stock).
 Se implementaron funciones y procedimientos almacenados (Stored Procedures) para automatizar tareas comunes y mejorar la consistencia de los datos.
 
-[Diagrama actualizado](Docs%20SegundaEntrega/Diagrama-SegundaEntrega.png)
+[Diagrama actualizado](Desktop/Docs%20SegundaEntrega/Diagrama-SegundaEntrega.png)
 
 Listado de Tablas
 Productos
@@ -119,15 +119,19 @@ Stored Precedure
 Paso a paso de ejecucion de scripts
 
 1.Abrir el cliente MySQL.
+
 2.Ejecutar Create-Verduleria-v2.sql para crear la base de datos y tablas.
+
 3.Ejecutar Create-Objetos.sql para crear triggers, vistas, funciones y stored procedures.
+
 4.Ejecutar Insertar-Verduleria.sql para insertar datos iniciales en las tablas.
+
 5.Ejecutar Prueba-Funcionamiento-v2.sql para verificar que todo funciona correctamente y probar triggers, vistas y funciones.
 
 
 Archivos de referencia
 
-[Create-Verduleria-v2.sql](Docs%20SegundaEntrega/Create-Verduleria-v2.sql)  
-[Insertar-Verduleria.sql](Docs%20SegundaEntrega/Insertar-Verduleria.sql)  
-[Prueba-Funcionamiento-v2.sql](Docs%20SegundaEntrega/Prueba-Funcionamiento-v2.sql)
-[Create-Objetos.sql](Docs%20SegundaEntrega/Create-Objetos.sql)
+[Create-Verduleria-v2.sql](Desktop/Docs%20SegundaEntrega/Create-Verduleria-v2.sql)  
+[Insertar-Verduleria.sql](Desktop/Docs%20SegundaEntrega/Insertar-Verduleria.sql)  
+[Prueba-Funcionamiento-v2.sql](Desktop/Docs%20SegundaEntrega/Prueba-Funcionamiento-v2.sql)
+[Create-Objetos.sql](Desktop/Docs%20SegundaEntrega/Create-Objetos.sql)
