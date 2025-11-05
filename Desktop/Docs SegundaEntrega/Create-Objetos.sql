@@ -1,45 +1,39 @@
 USE verduleria;
 
-DELIMITER //
-
-CREATE TRIGGER trg_actualiza_stock AFTER INSERT ON ventas
-FOR EACH ROW
-BEGIN
-    DECLARE prod_id INT;
-    DECLARE cantidad DECIMAL(10,3);
-    DECLARE i INT DEFAULT 0;
-    DECLARE prod_detalle JSON;
-    SET prod_detalle = NEW.detalle;
-    WHILE i < JSON_LENGTH(prod_detalle) DO
-        SET prod_id = JSON_EXTRACT(prod_detalle, CONCAT('$[',i,'].id_producto'));
-        SET cantidad = JSON_EXTRACT(prod_detalle, CONCAT('$[',i,'].cantidad'));
-        UPDATE productos SET stock = stock - cantidad WHERE id_producto = prod_id;
-        SET i = i + 1;
-    END WHILE;
-END;
-//
-
 CREATE VIEW vista_ventas_cliente AS
 SELECT c.id_cliente, c.nombre, c.apellido, SUM(v.total) AS total_ventas
 FROM ventas v
 JOIN clientes c ON v.cliente_id = c.id_cliente
 GROUP BY c.id_cliente, c.nombre, c.apellido;
-//
 
 CREATE VIEW vista_productos_bajo_stock AS
 SELECT id_producto, nombre, stock
 FROM productos
 WHERE stock < 10;
-//
 
 CREATE VIEW vista_detalle_ventas AS
-SELECT v.id_venta, v.fecha, c.nombre AS cliente, e.nombre AS empleado, p.nombre AS producto, dp.proveedor, JSON_EXTRACT(v.detalle, CONCAT('$[',i,'].cantidad')) AS cantidad
+SELECT v.id_venta,
+       v.fecha,
+       c.nombre AS cliente,
+       e.nombre AS empleado,
+       jt.nombre_producto AS producto,
+       dp.proveedor,
+       jt.cantidad
 FROM ventas v
 JOIN clientes c ON v.cliente_id = c.id_cliente
 JOIN empleados e ON v.empleado_id = e.id_empleado
-JOIN productos p ON JSON_CONTAINS_PATH(v.detalle, 'one', CONCAT('$[',0,'].id_producto')) 
-JOIN detalle_producto dp ON p.id_producto = dp.id_producto;
-//
+JOIN JSON_TABLE(
+    v.detalle,
+    '$[*]' COLUMNS (
+        id_producto INT PATH '$.id_producto',
+        cantidad DECIMAL(10,3) PATH '$.cantidad',
+        nombre_producto VARCHAR(100) PATH '$.nombre'
+    )
+) AS jt
+JOIN productos p ON p.id_producto = jt.id_producto
+JOIN detalle_producto dp ON dp.id_producto = jt.id_producto;
+
+DELIMITER //
 
 CREATE FUNCTION fn_total_ventas_cliente(cliente INT) RETURNS DECIMAL(12,2)
 DETERMINISTIC

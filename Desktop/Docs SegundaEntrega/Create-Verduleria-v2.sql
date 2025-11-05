@@ -64,9 +64,11 @@ FOR EACH ROW
 BEGIN
     DECLARE prod_id INT;
     DECLARE cantidad DECIMAL(10,3);
-    DECLARE i INT DEFAULT 0;
     DECLARE prod_detalle JSON;
-    SET prod_detalle = CAST(NEW.detalle AS JSON);
+    DECLARE i INT DEFAULT 0;
+
+    SET prod_detalle = NEW.detalle;
+
     WHILE i < JSON_LENGTH(prod_detalle) DO
         SET prod_id = JSON_EXTRACT(prod_detalle, CONCAT('$[',i,'].id_producto'));
         SET cantidad = JSON_EXTRACT(prod_detalle, CONCAT('$[',i,'].cantidad'));
@@ -76,4 +78,3 @@ BEGIN
 END;
 //
 DELIMITER ;
-
