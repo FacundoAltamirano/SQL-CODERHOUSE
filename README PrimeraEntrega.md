@@ -38,7 +38,7 @@ En futuras entregas, se implementará una tabla intermedia de detalle de ventas,
 
  Diagrama
  
-![Diagrama](Desktop/Docs/Diagrama%20DrawSQL.png)
+![Diagrama](Desktop/Docs%20PrimeraEntrega/Diagrama%20DrawSQL.png)
 
 
  Listado de Tablas
@@ -91,12 +91,12 @@ Ventas
 | observaciones | TEXT                                              |                             |
 
 
-[Creación](Desktop/Docs/Create-Verduleria.sql)
+[Creación](Desktop/Docs%20PrimeraEntrega/Create-Verduleria.sql)
 
 Prueba funcionamiento
 En el siguiente script se agrega un cliente y un empleado, luego se crea un pedido usando esos registros y finalmente se consultan los pedidos para verificar que se hayan registrado correctamente.
 
-[Pruebas](Desktop/Docs/Prueba-Funcionamiento.sql)
+[Pruebas](Desktop/Docs%20PrimeraEntrega/Prueba-Funcionamiento.sql)
 
 
 

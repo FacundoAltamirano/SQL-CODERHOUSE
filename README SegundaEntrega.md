@@ -128,7 +128,7 @@ Paso a paso de ejecucion de scripts
 
 Archivos de referencia
 
-[Create-Verduleria-v2.sql](Docs/SegundaEntrega/Create-Verduleria-v2.sql)  
-[Insertar-Verduleria.sql](Docs/SegundaEntrega/Insertar-Verduleria.sql)  
-[Prueba-Funcionamiento-v2.sql](Docs/SegundaEntrega/Prueba-Funcionamiento-v2.sql)
-[Create-Objetos.sql](Docs/SegundaEntrega/Create-Objetos.sql)
+[Create-Verduleria-v2.sql](Docs%20SegundaEntrega/Create-Verduleria-v2.sql)  
+[Insertar-Verduleria.sql](Docs%20SegundaEntrega/Insertar-Verduleria.sql)  
+[Prueba-Funcionamiento-v2.sql](Docs%20SegundaEntrega/Prueba-Funcionamiento-v2.sql)
+[Create-Objetos.sql](Docs%20SegundaEntrega/Create-Objetos.sql)
