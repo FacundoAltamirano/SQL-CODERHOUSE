@@ -128,5 +128,8 @@ Paso a paso de ejecucion de scripts
 
 5.Ejecutar [Prueba-Funcionamiento-v2.sql](Desktop/Docs%20SegundaEntrega/Prueba-Funcionamiento-v2.sql) para verificar que todo funciona correctamente y probar triggers, vistas y funciones.
 
- 
+Toda la aplicacion fue creada con referencias y ayuda de cursos online, principalmente siguiendo el canal MoureDev en Youtube, y aplicando algunos consejos y buenas practicas de informacion obtenida en cursos de Platzi y Udemy.
 
+Si bien esta segunda entrega no esta completa ni tan prolija como la primera, no pude finalizarla totalmente por falta de tiempo debido al trabajo. De todas formas, se incluyen todas las mejoras que alcance a implementar, como la tabla detalle_producto, los triggers de stock automatico, vistas, funciones y procedimientos almacenados.
+
+El proyecto todavia esta en desarrollo y puede seguir mejorandose. En la tercera entrega se podran completar y pulir todas las funcionalidades para dejarlo mas prolijo y completo.
