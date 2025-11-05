@@ -19,7 +19,6 @@ Se crearon triggers para actualizar el stock automáticamente después de cada v
 Se añadieron vistas para consultar información consolidada (por ejemplo, ventas totales por cliente y productos con bajo stock).
 Se implementaron funciones y procedimientos almacenados (Stored Procedures) para automatizar tareas comunes y mejorar la consistencia de los datos.
 
-Diagrama actualizado
 [Diagrama actualizado](Docs%20PrimeraEntrega/Diagrama-SegundaEntrega.png)
 
 Listado de Tablas
