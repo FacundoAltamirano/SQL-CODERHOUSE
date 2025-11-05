@@ -58,14 +58,15 @@ CREATE TABLE IF NOT EXISTS ventas (
 ) ENGINE=InnoDB;
 
 DELIMITER //
-CREATE TRIGGER trg_actualiza_stock AFTER INSERT ON ventas
+CREATE TRIGGER trg_actualiza_stock
+AFTER INSERT ON ventas
 FOR EACH ROW
 BEGIN
     DECLARE prod_id INT;
     DECLARE cantidad DECIMAL(10,3);
-    DECLARE prod_detalle JSON;
-    SET prod_detalle = NEW.detalle;
     DECLARE i INT DEFAULT 0;
+    DECLARE prod_detalle JSON;
+    SET prod_detalle = CAST(NEW.detalle AS JSON);
     WHILE i < JSON_LENGTH(prod_detalle) DO
         SET prod_id = JSON_EXTRACT(prod_detalle, CONCAT('$[',i,'].id_producto'));
         SET cantidad = JSON_EXTRACT(prod_detalle, CONCAT('$[',i,'].cantidad'));
@@ -75,3 +76,4 @@ BEGIN
 END;
 //
 DELIMITER ;
+
