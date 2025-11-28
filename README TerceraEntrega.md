@@ -144,58 +144,64 @@ Periodo analizado: 2024-01-01 a 2025-12-31
 
 Ventas por cliente
 
-Cliente	       Total Vendido	Promedio de Compra	  Cantidad de Ventas
-María Gómez	      $250                $250	                 1
-Carlos Gómez	  $200	              $200	                 1
-Lucía Martínez	  $300	              $300	                 1
+| Cliente        | Total Vendido | Promedio de Compra | Cantidad de Ventas |
+| -------------- | ------------- | ------------------ | ------------------ |
+| María Gómez    | $250          | $250               | 1                  |
+| Carlos Gómez   | $200          | $200               | 1                  |
+| Lucía Martínez | $300          | $300               | 1                  |
 
-Descripción:
-La tabla muestra el total vendido, promedio de compra y cantidad de ventas por cliente, utilizando vista_ventas_cliente y fn_promedio_compra_cliente.
+
+Objetivo: Mostrar el total vendido, promedio de compra y cantidad de ventas por cliente, utilizando vista_ventas_cliente y fn_promedio_compra_cliente.
 
 Productos más vendidos
 
-Producto	   Cantidad Vendida
-Tomate	            4 kg
-Papa	            3 kg
-Manzana	            3 kg
-Zanahoria	        2 kg
-Lechuga	            1 kg
+| Producto  | Cantidad Vendida |
+| --------- | ---------------- |
+| Tomate    | 4 kg             |
+| Papa      | 3 kg             |
+| Manzana   | 3 kg             |
+| Zanahoria | 2 kg             |
+| Lechuga   | 1 kg             |
 
-Descripción:
-Identifica los productos con mayor demanda, obtenido a través de sp_top_productos y vista_detalle_ventas.
+
+Objetivo: Identificar los productos con mayor demanda, obtenido a través de sp_top_productos y vista_detalle_ventas.
 
 Productos con bajo stock
 
-Producto	Stock Actual
-Manzana	         7
+| Producto | Stock Actual |
+| -------- | ------------ |
+| Manzana  | 7            |
 
-Descripción:
-Muestra los productos que requieren reposición, usando vista_productos_bajo_stock.
+
+Objetivo: Mostrar los productos que requieren reposición, usando vista_productos_bajo_stock.
 
 Rendimiento de empleados
 
-Empleado	      Cantidad de Ventas	 Total Vendido
-Juan Pérez	              1              	$250
-Ana López	              1	                $200
-Diego Ramírez	          1	                $300
+| Empleado      | Cantidad de Ventas | Total Vendido |
+| ------------- | ------------------ | ------------- |
+| Juan Pérez    | 1                  | $250          |
+| Ana López     | 1                  | $200          |
+| Diego Ramírez | 1                  | $300          |
 
-Descripción:
-Permite analizar el desempeño de los empleados en ventas, utilizando fn_cantidad_ventas_empleado y sp_resumen_empleado.
+
+Objetivo: Analizar el desempeño de los empleados en ventas, utilizando fn_cantidad_ventas_empleado y sp_resumen_empleado.
 
 Ganancias Totales
 
-Periodo	Ganancia Total
-2024-01-01 a 2025-12-31	$750
+| Periodo                 | Ganancia Total |
+| ----------------------- | -------------- |
+| 2024-01-01 a 2025-12-31 | $750           |
 
-Descripción:
-Total de ingresos generados en el periodo, calculado mediante fn_ganancia_total o sp_reporte_ganancias.
+
+Objetivo: Total de ingresos generados en el periodo, calculado mediante fn_ganancia_total o sp_reporte_ganancias.
 
 Auditoría de Productos
 
-Acción	 Cantidad
-INSERT   	1
-UPDATE  	1
-DELETE	    1
+| Acción | Cantidad |
+| ------ | -------- |
+| INSERT | 1        |
+| UPDATE | 1        |
+| DELETE | 1        |
 
-Descripción:
-Registra los cambios en los productos (insert, update, delete) usando los triggers de auditoría trg_auditoria_productos.
+
+Objetivo: Registrar los cambios en los productos (insert, update, delete) usando el trigger trg_auditoria_productos.
