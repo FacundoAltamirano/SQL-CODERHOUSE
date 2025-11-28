@@ -126,7 +126,7 @@ Inclusión de datos de prueba para facilitar el testeo inmediato del sistema.
 
 1. Ejecutar [create-verduleria.sql](Desktop/Docs%20TerceraEntrega/Create-Verduleria-v3.sql) para crear la base de datos y tablas.  
 2. Ejecutar [create-objetos.sql](Desktop/Docs%20TerceraEntrega/Create-Objetos-v3.sql) para crear triggers, vistas, funciones y stored procedures.  
-3. Ejecutar [insertar-verduleria.sql](Desktop/Docs%20TerceraEntrega/insertar-Verduleria-v3.sql) para insertar datos iniciales en las tablas.  
+3. Ejecutar [insertar-verduleria.sql](Desktop/Docs%20TerceraEntrega/Insertar-Verduleria-v3.sql) para insertar datos iniciales en las tablas.  
 4. Ejecutar [prueba-funcionamiento.sql](Desktop/Docs%20TerceraEntrega/Prueba-Funcionamiento-v3.sql) para verificar que todo funciona correctamente y probar triggers, vistas y funciones.
 
 
