@@ -136,6 +136,8 @@ MySQL Workbench 8.0
 DrawSQL / dbdiagram.io para diagramas ER
 Excel y Power BI para análisis y reportes
 Documentación oficial de MySQL (JSON_TABLE, triggers, funciones)
+Para esta entrega se aplicaron prácticas y conceptos del Curso COMPLETO de SQL y BASES DE DATOS Desde Cero para PRINCIPIANTES de YouTube (MoureDev).
+También se utilizaron conocimientos del Curso Avanzado de MySQL: Vistas, Triggers y Columnas Generadas de Alberto Alcocer en Platzi.
 
 
 13. Informe Analítico – Verdulería
