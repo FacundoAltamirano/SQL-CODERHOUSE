@@ -43,7 +43,7 @@ El modelo abarca todo el ciclo comercial de una verdulería real.
 
 5. Diagrama
 
-![Diagrama ER Verdulería](Docs%20TerceraEntrega/Diagrama-TerceraEntrega.png)
+![Diagrama ER Verdulería](Desktop/Docs%20TerceraEntrega/Diagrama-TerceraEntrega.png)
 
 6. Listado de tablas y objetos
 
@@ -124,10 +124,10 @@ Inclusión de datos de prueba para facilitar el testeo inmediato del sistema.
 11. Paso a paso de ejecución de scripts
 
 
-1. Ejecutar [create-verduleria.sql](Docs%20TerceraEntrega/Create-Verduleria-v3.sql) para crear la base de datos y tablas.  
-2. Ejecutar [create-objetos.sql](Docs%20TerceraEntrega/Create-Objetos-v3.sql) para crear triggers, vistas, funciones y stored procedures.  
-3. Ejecutar [insertar-verduleria.sql](Docs%20TerceraEntrega/insertar-Verduleria-v3.sql) para insertar datos iniciales en las tablas.  
-4. Ejecutar [prueba-funcionamiento.sql](Docs%20TerceraEntrega/Prueba-Funcionamiento-v3.sql) para verificar que todo funciona correctamente y probar triggers, vistas y funciones.
+1. Ejecutar [create-verduleria.sql](Desktop/Docs%20TerceraEntrega/Create-Verduleria-v3.sql) para crear la base de datos y tablas.  
+2. Ejecutar [create-objetos.sql](Desktop/Docs%20TerceraEntrega/Create-Objetos-v3.sql) para crear triggers, vistas, funciones y stored procedures.  
+3. Ejecutar [insertar-verduleria.sql](Desktop/Docs%20TerceraEntrega/insertar-Verduleria-v3.sql) para insertar datos iniciales en las tablas.  
+4. Ejecutar [prueba-funcionamiento.sql](Desktop/Docs%20TerceraEntrega/Prueba-Funcionamiento-v3.sql) para verificar que todo funciona correctamente y probar triggers, vistas y funciones.
 
 
 12. Herramientas y referencias
